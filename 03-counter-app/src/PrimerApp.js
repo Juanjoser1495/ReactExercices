@@ -1,11 +1,10 @@
-const PrimeraApp = (props) => {
-  const saludo = "Hola Mundo const";
+const PrimeraApp = ({ saludo }) => {
+  const saludo2 = "Hola Mundo const";
 
-  console.log(props);
   return (
     <>
-      <h1>{saludo}</h1>
-      <h2>{props.saludo}</h2>
+      <h1>{saludo2}</h1>
+      <h2>{saludo}</h2>
       <p>Mi primera app</p>
     </>
   );
