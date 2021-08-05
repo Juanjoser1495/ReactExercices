@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const PrimeraApp = ({ saludo }) => {
   const saludo2 = "Hola Mundo const";
 
@@ -8,6 +10,10 @@ const PrimeraApp = ({ saludo }) => {
       <p>Mi primera app</p>
     </>
   );
+};
+
+PrimeraApp.propTypes = {
+  saludo: PropTypes.string.isRequired,
 };
 
 export default PrimeraApp;
