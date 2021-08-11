@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 const CounterApp = ({ value }) => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(value);
 
   //handleAdd
   const handleAdd = (e) => {
@@ -12,6 +12,15 @@ const CounterApp = ({ value }) => {
   //handleAdd use State
   const handleAddState = () => {
     setCounter(counter + 1);
+  };
+
+  //handle Reset
+  const handleReset = () => setCounter(value);
+  //handle substract
+  const handleSubstract = () => {
+    setCounter((c) => {
+      return c - 1;
+    });
   };
 
   return (
@@ -26,13 +35,9 @@ const CounterApp = ({ value }) => {
       >
         +1
       </button>
-      <button
-        onClick={(e) => {
-          handleAddState(e);
-        }}
-      >
-        +1 use state
-      </button>
+      <button onClick={handleAddState}>+1 use state</button>
+      <button onClick={handleReset}>Reset</button>
+      <button onClick={handleSubstract}>-1 use state</button>
     </div>
   );
 };
