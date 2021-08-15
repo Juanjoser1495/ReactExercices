@@ -10,7 +10,7 @@ const nombreCompletoTS = `${nombre} ${apellido}`;
 console.log(nombreCompleto);
 console.log(nombreCompletoTS);
 
-export function getSaludo(nombre){
+export function getSaludo(nombre = "Carlos"){
     return 'Hola ' + nombre;
 }
 

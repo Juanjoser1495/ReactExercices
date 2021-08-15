@@ -7,4 +7,11 @@ describe('Pruebas en 02-template-string',()=>{
 
         expect(saludo).toBe("Hola "+ nombre);
     });
+
+    test('GetSaludoMustReturnHolaCarlosWithoutArguments',()=>{
+        const nombre = 'Carlos';
+        const saludo = getSaludo();
+
+        expect(saludo).toBe("Hola "+ nombre);
+    });
 });
