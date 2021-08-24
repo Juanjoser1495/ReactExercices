@@ -17,3 +17,5 @@ getImagen().then(({ data }) => {
   img.src = url;
   document.body.append(img);
 });
+
+export { getImagen };
