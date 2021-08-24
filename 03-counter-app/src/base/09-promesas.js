@@ -1,5 +1,5 @@
-import { getHeroeById, getHeroesByOwner } from "./bases/08-imports-exports";
-import { heroes } from "./data/Heroes";
+import { getHeroeById, getHeroesByOwner } from "./08-imports-exports";
+import { heroes } from "../data/Heroes";
 
 // const promesa = new Promise((resolve, reject) => {
 //   setTimeout(() => {
@@ -27,10 +27,4 @@ const getHeroeByIdAsync = (id) => {
   });
 };
 
-getHeroeByIdAsync(3)
-  .then((heroe) => {
-    console.log(heroe);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+export { getHeroeByIdAsync };
