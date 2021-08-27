@@ -9,9 +9,19 @@ describe("Pruebas en <PrimeraApp />", () => {
   //     expect(getByText(saludo)).toBeInTheDocument();
   //   });
 
-  test("Debe de mostrar el mensaje 'Hola Soy Goku'", () => {
+  test("Debe de mostrar el <PrimeraApp> correctamnete", () => {
     const saludo = "Hola Soy Goku";
     const wrapper = shallow(<PrimeraApp saludo={saludo}></PrimeraApp>);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  test("Debe de mostrar el subtitulo enviado por props", () => {
+    const saludo = "Hola Soy Goku";
+    const subtitulo = "Soy un subtitulo";
+    const wrapper = shallow(
+      <PrimeraApp saludo={saludo} subtitulo={subtitulo}></PrimeraApp>
+    );
+    const returned = wrapper.find("h3").text();
+    expect(returned).toBe(subtitulo);
   });
 });
