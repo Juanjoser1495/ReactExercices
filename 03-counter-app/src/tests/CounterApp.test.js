@@ -3,6 +3,7 @@ import CounterApp from "../CounterApp";
 
 describe("Pruebas en <CounterApp />", () => {
   let wrapper = shallow(<CounterApp></CounterApp>);
+
   beforeEach(() => {
     wrapper = shallow(<CounterApp></CounterApp>);
   });
@@ -28,5 +29,13 @@ describe("Pruebas en <CounterApp />", () => {
     wrapper.find("button").at(3).simulate("click");
     const returned = wrapper.find("h3").text();
     expect(returned).toBe("-1");
+  });
+
+  test("Debe reiniciar al valor por defecto", () => {
+    const wrapper = shallow(<CounterApp value={105}></CounterApp>);
+    wrapper.find("button").at(3).simulate("click");
+    wrapper.find("button").at(2).simulate("click");
+    const returned = wrapper.find("h3").text();
+    expect(returned).toBe("105");
   });
 });
