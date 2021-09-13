@@ -4,7 +4,12 @@ exports[`Pruebas en <GifGridItem /> Debe de mostrar el <GifGridItem> correctamne
 <div
   className="card"
 >
-  <img />
-  <p />
+  <img
+    alt="A title"
+    src="https://localhost/algo.jpg"
+  />
+  <p>
+    A title
+  </p>
 </div>
 `;
