@@ -29,4 +29,13 @@ describe("Pruebas en <AddCategory />", () => {
     wrapper.find("form").simulate("submit", { preventDefault: () => {} });
     expect(setCategories).not.toHaveBeenCalled();
   });
+
+  test("Debe de llamar el setCategories y limpiar la caja de texto", () => {
+    const input = wrapper.find("input");
+    const value = "Hola Mundo 2";
+    input.simulate("change", { target: { value } });
+    wrapper.find("form").simulate("submit", { preventDefault: () => {} });
+    expect(setCategories).toHaveBeenCalled();
+    expect(input.props().value.trim()).toBe("");
+  });
 });
