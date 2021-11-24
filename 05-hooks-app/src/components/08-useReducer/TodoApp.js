@@ -22,6 +22,11 @@ export const TodoApp = () => {
     dispatch(action);
   };
 
+  const handleToggle = (todoId) => {
+    const action = { type: "Toggle", payload: todoId };
+    dispatch(action);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (description.trim().length <= 1) return;
@@ -51,7 +56,12 @@ export const TodoApp = () => {
               {todos.map((todo, i) => {
                 return (
                   <li key={todo.id} className="list-group-item">
-                    <p>
+                    <p
+                      className={`${todo.done && "complete"}`}
+                      onClick={() => {
+                        handleToggle(todo.id);
+                      }}
+                    >
                       {i + 1}. {todo.desc}
                     </p>
                     <button
