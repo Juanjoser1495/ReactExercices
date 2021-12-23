@@ -45,7 +45,6 @@ describe("Pruebas en useCounter", () => {
     const { increment, reset } = result.current;
     act(() => {
       increment();
-      increment();
       reset();
     });
 
